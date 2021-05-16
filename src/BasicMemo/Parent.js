@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import WithoutMemoChild from './WithoutMemoChild';
+import WithMemoChild from './WithoutMemoChild';
 
 class Parent extends Component {
   state = {
@@ -14,6 +15,7 @@ class Parent extends Component {
     return (
       <>
         <WithoutMemoChild val={this.state.val} />
+        <WithMemoChild val={this.state.val} />
       </>
     );
   }
