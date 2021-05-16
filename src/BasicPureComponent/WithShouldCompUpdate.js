@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 class PureComp extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class PureComp extends Component {
   }
 
   render() {
-    console.log('in PureComp');
+    console.log('in shouldComponentUpdateComp');
     return <Demo value={this.state.value} />;
   }
 }

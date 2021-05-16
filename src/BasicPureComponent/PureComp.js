@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 
-class PureComp extends Component {
+class PureComp extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,10 +10,6 @@ class PureComp extends Component {
 
   componenetDidMount() {
     setInterval(() => this.setState({ value: 1 }), 3000);
-  }
-
-  shouldComponentUpdate(nextProp, nextState) {
-    return this.state.value === nextState.value ? false : true;
   }
 
   render() {
