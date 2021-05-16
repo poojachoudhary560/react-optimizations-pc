@@ -4,8 +4,8 @@ const ImageComponent = () => {
   return (
     <img
       src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97"
-      width="960"
-      height="480"
+      width="400"
+      height="300"
       alt="coding"
     />
   );
