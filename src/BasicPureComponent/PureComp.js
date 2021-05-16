@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import Child from './Child';
 
 class PureComp extends PureComponent {
   constructor(props) {
@@ -14,6 +15,6 @@ class PureComp extends PureComponent {
 
   render() {
     console.log('in PureComp');
-    return <Demo value={this.state.value} />;
+    return <Child value={this.state.value} />;
   }
 }

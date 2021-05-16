@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Child from './Child';
 
 class WithShouldCompUpdate extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class WithShouldCompUpdate extends Component {
 
   render() {
     console.log('in shouldComponentUpdateComp');
-    return <Demo value={this.state.value} />;
+    return <Child value={this.state.value} />;
   }
 }
 

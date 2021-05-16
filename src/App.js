@@ -3,6 +3,7 @@ import './style.css';
 import BasicMemo from './BasicMemo';
 import BasicLazySuspense from './BasicLazySuspense';
 import BasicErrorBoundaries from './BasicErrorBoundaries';
+import BasicPureComponent from './BasicPureComponent';
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <BasicMemo />
       <BasicLazySuspense />
       <BasicErrorBoundaries />
+      <BasicPureComponent />
     </div>
   );
 }
