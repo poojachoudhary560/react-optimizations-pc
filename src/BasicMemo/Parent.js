@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import WithoutMemoChild from './WithoutMemoChild';
-import WithMemoChild from './WithoutMemoChild';
+import WithMemoChild from './WithMemoChild';
 
 class Parent extends Component {
   state = {
