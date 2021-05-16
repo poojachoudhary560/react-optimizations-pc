@@ -21,4 +21,4 @@ class Parent extends Component {
   }
 }
 
-export default WithoutMemoChild;
+export default Parent;
