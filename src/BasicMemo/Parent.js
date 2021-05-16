@@ -14,7 +14,7 @@ class Parent extends Component {
   render() {
     return (
       <>
-        <WithoutMemoChild val={this.state.val} />
+        {/* <WithoutMemoChild val={this.state.val} />  */}
         <WithMemoChild val={this.state.val} />
       </>
     );
