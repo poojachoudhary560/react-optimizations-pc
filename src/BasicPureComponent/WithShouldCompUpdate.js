@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class PureComp extends Component {
+class WithShouldCompUpdate extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,3 +21,5 @@ class PureComp extends Component {
     return <Demo value={this.state.value} />;
   }
 }
+
+export default WithShouldCompUpdate;
