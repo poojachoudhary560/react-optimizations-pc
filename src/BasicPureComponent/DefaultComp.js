@@ -10,11 +10,11 @@ class DefaultComp extends Component {
   }
 
   componentDidMount() {
-    setInterval(() => setState({ value: 1 }), 3000);
+    setInterval(() => this.setState({ value: 1 }), 3000);
   }
 
   render() {
-    console.log('render default Comp');
+    // console.log('render default Comp');
     return <Child value={this.state.value} />;
   }
 }

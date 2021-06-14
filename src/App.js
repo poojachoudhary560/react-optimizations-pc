@@ -10,8 +10,12 @@ export default function App() {
     <div>
       <BasicMemo />
       <BasicLazySuspense />
-      <BasicErrorBoundaries />
       <BasicPureComponent />
+
+      {/*
+      
+      <BasicErrorBoundaries />
+      */}
     </div>
   );
 }

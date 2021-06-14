@@ -10,7 +10,7 @@ class PureComp extends PureComponent {
   }
 
   componenetDidMount() {
-    setInterval(() => this.setState({ value: 1 }), 3000);
+    setInterval(() => this.setState({ value: '1' }), 3000);
   }
 
   render() {
@@ -18,3 +18,5 @@ class PureComp extends PureComponent {
     return <Child value={this.state.value} />;
   }
 }
+
+export default PureComp;
