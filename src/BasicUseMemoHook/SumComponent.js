@@ -6,7 +6,7 @@ const SumComponent = () => {
   const [b, setB] = useState('');
 
   const handleChange = (input, e) => {
-    console.log(input, e);
+    // console.log(input, e);
     if (input === 'a') {
       setA(e.target.value);
     } else {
