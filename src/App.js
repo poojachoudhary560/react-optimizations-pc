@@ -4,6 +4,7 @@ import BasicMemo from './BasicMemo';
 import BasicLazySuspense from './BasicLazySuspense';
 import BasicErrorBoundaries from './BasicErrorBoundaries';
 import BasicPureComponent from './BasicPureComponent';
+import MemoFunctional from './MemoFunctional';
 
 export default function App() {
   return (
@@ -11,6 +12,8 @@ export default function App() {
       <BasicMemo />
       <BasicLazySuspense />
       <BasicPureComponent />
+      <hr />
+      <MemoFunctional />
 
       {/*
       
