@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { MovieMemo, MemoizedMovie } from './MovieMemo';
 import { MemoizedMovieMemoEqualityCheck } from './MovieMemoEqualityCheck';
+import { MemoizedWithParentCallback } from './MemoWithParentCallback';
 
 const DisplayMovieComponent = (props) => {
   const [moveData, setMovieData] = useState({
@@ -12,6 +13,12 @@ const DisplayMovieComponent = (props) => {
     setCounter((prevVal) => prevVal + 1);
   };
 
+  const changeMovieData = useCallback(
+    (data) => {
+      setMovieData(data);
+    },
+    [moveData.title]
+  );
   useEffect(() => {
     if (counter === 5) {
       setMovieData({
@@ -49,6 +56,18 @@ const DisplayMovieComponent = (props) => {
         />
         <div>
           <p> Counter: {counter} </p>
+        </div>
+      </div>
+
+      <div>
+        <p>Memo fail usecase due to callback as props from parent to child</p>
+        <MemoizedWithParentCallback
+          title={moveData.title}
+          releaseDate={moveData.releaseDate}
+          changeMovieData={changeMovieData}
+        />
+        <div>
+          <p>Counter: {counter} </p>
         </div>
       </div>
     </div>
