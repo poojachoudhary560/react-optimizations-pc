@@ -6,7 +6,7 @@ import BasicErrorBoundaries from './BasicErrorBoundaries';
 import BasicPureComponent from './BasicPureComponent';
 import MemoFunctional from './MemoFunctional';
 import BasicUseMemoHook from './BasicUseMemoHook';
-
+import MemoHOC from './MemoHOC';
 export default function App() {
   return (
     <div>
@@ -21,6 +21,8 @@ export default function App() {
       
       <BasicErrorBoundaries />
       */}
+
+      <MemoHOC />
     </div>
   );
 }

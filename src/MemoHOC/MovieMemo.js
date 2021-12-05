@@ -12,14 +12,17 @@
 // the component and memoizes the result. Before the next
 // render, if the props are same, React uses the memoized result
 // skipping the next rendering.
+import React from 'react';
 
-export function MovieMemo({ title, releaseDate }) {
+export const MovieMemo = ({ title, releaseDate }) => {
+  console.log('in movie memo', title, releaseDate);
   return (
     <div>
       <div>Movie Title: {title}</div>
       <div>Release date: {releaseDate} </div>
     </div>
   );
-}
+};
 
+// export default MovieMemo;
 export const MemoizedMovie = React.memo(MovieMemo);
