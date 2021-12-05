@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { MovieMemo } from './MovieMemo';
+import React, { useState, useEffect } from 'react';
+import { MovieMemo, MemoizedMovie } from './MovieMemo';
 
 const DisplayMovieComponent = (props) => {
   const [moveData, setMovieData] = useState({
@@ -10,12 +10,24 @@ const DisplayMovieComponent = (props) => {
   const handleCounter = () => {
     setCounter((prevVal) => prevVal + 1);
   };
+
+  useEffect(() => {
+    if (counter === 5) {
+      setMovieData({
+        title: 'HP2',
+        releaseDate: '12-01-2000',
+      });
+    }
+  }, [counter]);
   return (
     <div>
       <div>
         <p> Basic Movie Compoenent with React.memo() </p>
 
-        <MovieMemo title={moveData.title} releaseDate={moveData.releaseDate} />
+        <MemoizedMovie
+          title={moveData.title}
+          releaseDate={moveData.releaseDate}
+        />
         <div>
           <p>Counter : {counter}</p>
           Counter btn click here:
