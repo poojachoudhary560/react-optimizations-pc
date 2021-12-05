@@ -1,0 +1,44 @@
+// React.memo() is a HOC
+// React.memo() wraps a component
+// when React.memo() wraps a component, React memoizes the
+// rendered output of wrapped component and skips unnecessary
+// rendering
+//
+// When deciding to update DOM, React first renders your
+// component, then compares the result with the previous render.
+// If the render results are different, React updates the DOM
+
+// When a component is wrapped in react.memo(), React renders
+// the component and memoizes the result. Before the next
+// render, if the props are same, React uses the memoized result
+// skipping the next rendering.
+
+// If your component isn't heavy and usually renders with different props, most likely you don't need React.memo()
+
+// Performance related changes applied incorrectly can harm Performance
+
+// While possible, wrapping class based components in React.memo() is undesirable. Extend PureComponent class or custom implementation of shouldComponentUpdate() method if you need memoization of class based components.
+
+// Useless Props Comparision
+// Imagine a component that usually renders with different props. In this case, memoization doesn't provide any benifits.
+
+// Even if you wrap such a component in React.memo(), React does 2 jobs on every rendering:
+// 1 Invokes the comparision function to determine whether the previous and next props are equal.
+// 2 Because props comparision are almost always false, React performs the diff of previous and current render results.
+
+// React.memo() and callback functions
+// Note: function object equals only to itself.
+
+// Example
+function sumFactory = (a,b) => a+b;
+
+const sum1 = sumFactory();
+const sum2 = sumFactory();
+
+console.log(sum1 === sum2); // false
+console.log(sum1 === sum1); // true
+console.log(sum2 === sum2); // true
+
+// every time a parent component defines a callback for its child, it creates new function instances. 
+// This break's memoization and this can be fixed using useCallback on callback fn.
+// useCallback() preserves the callback instance between renderings
