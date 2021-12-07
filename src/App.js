@@ -7,6 +7,8 @@ import BasicPureComponent from './BasicPureComponent';
 import MemoFunctional from './MemoFunctional';
 import BasicUseMemoHook from './BasicUseMemoHook';
 import MemoHOC from './MemoHOC';
+import BasicMemoHook from './BasicMemoHook';
+
 export default function App() {
   return (
     <div>
@@ -23,6 +25,7 @@ export default function App() {
       */}
 
       <MemoHOC />
+      <BasicMemoHook />
     </div>
   );
 }
