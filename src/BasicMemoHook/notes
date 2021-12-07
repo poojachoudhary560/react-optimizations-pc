@@ -1,0 +1,13 @@
+- When react compoenents have to perform expensive calculations
+- example big list of employees and search query, component should filter employee names by query
+- in such cases, we can try to imporove performance by memoization technique
+- useMemo Hook
+This hook accepts a compute function and a dependency array
+- During initial rendering, useMemo(compute, dependencies) invokes compute, memoizes the calculation result, and returns it to the component.
+- If during netx renderings, if dependencies do not change, useMemo() does not run compute fn but rather returns the memoized value.
+- But if dependencies change during re-rendering, the useMemo() invokes compute function, memoizes the value and returns it.
+- If your computation callback uses props or state values, then indicate those values as dependencies.
+
+const memoizedResult = useMemo(() => {
+  return expensiveFunction(propA, propB);
+}, [propA, propB]);
